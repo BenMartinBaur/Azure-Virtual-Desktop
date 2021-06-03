@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "imageTemplateName": {
+            "value": "imageTemplateWin10Multi" // TODO: Fill in parameter value
+        },
+        "api-version": {
+            "value": "2019-05-01-preview" // TODO: Fill in parameter value
+        },
+        "svclocation": {
+            "value": "West Europe" // TODO: Fill in parameter value
+        }
+    }
+}
