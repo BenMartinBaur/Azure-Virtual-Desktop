@@ -1,0 +1,79 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "nestedTemplatesLocation": {
+            "value": "https://raw.githubusercontent.com/Azure/RDS-Templates/master/ARM-wvd-templates/nestedtemplates/"
+        },
+        "artifactsLocation": {
+            "value": "https://raw.githubusercontent.com/Azure/RDS-Templates/master/ARM-wvd-templates/DSC/Configuration.zip"
+        },
+        "tags": {
+            "value": {
+                "business unit": "cx-001",
+                "owner": "bebaur@microsoft.com",
+                "end date": "31.12.9999" 
+            }
+        },
+        "hostpoolName": {
+            "value": "hp-cx-001"
+        },
+        "hostpoolToken": {
+            "value": ""
+        },
+        "administratorAccountUsername": {
+            "value": "gbbadmin@hpclab.local"
+        },
+        "administratorAccountPassword": {
+            "value": ""
+        },
+        "vmAdministratorAccountUsername": {
+            "value": "gbblocaladmin"
+        },
+        "vmAdministratorAccountPassword": {
+            "value": ""
+        },
+        "vmSize": {
+            "value": "Standard_B2ms"
+        },
+        "vmInitialNumber": {
+            "value": 1
+        },
+        "vmNumberOfInstances": {
+            "value": 3
+        },
+        "vmNamePrefix": {
+            "value": "hp-cx"
+        },
+        "vmImageType": {
+            "value": "CustomImage"
+        },
+        "vmCustomImageSourceId": {
+            "value": "/subscriptions/d6083500-90b3-4d1b-a446-903d314ab7be/resourceGroups/rg-imagebuilder-euw-001/providers/Microsoft.Compute/images/aibCustomImgWin10"
+        },
+        "vmDiskType": {
+            "value": "Standard_LRS"
+        },
+        "existingVnetName": {
+            "value": "vnet-msft-euw-001"
+        },
+        "existingSubnetName": {
+            "value": "snet-wvd"
+        },
+        "virtualNetworkResourceGroupName": {
+            "value": "rg-msft-euw-001"
+        },
+        "ouPath": {
+            "value": "OU=DEMO,DC=hpclab,DC=local"
+        },
+        "domain": {
+            "value": "hpclab.local"
+        },
+        "workspaceId": {
+            "value": "4d02e771-63ba-4862-be91-029f06a8a3e7"
+        },
+        "workspaceKey": {
+            "value": ""
+        }
+    }
+}
