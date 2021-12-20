@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "availability-level": "",
+        "environment": "",
+        "mission": "",
+        "po-number": "",
+        "protection-level": "",
+        "source": "Ben Martin Baur",
+        "join-type": "AAD"
+      }
+    },
+    "aadJoin": {
+      "value": true
+    },
+    "vmSize": {
+      "value": "Standard_B2ms"
+    },
+    "vmCount": {
+      "value": 3
+    },
+    "vmLicenseType": {
+      "value": "Windows_Client"
+    },
+    "virtualNetwork": {
+      "value": "/subscriptions/xxx/resourceGroups/rg-spoke-xxx/providers/Microsoft.Network/virtualNetworks/vnet-spoke-xxx/subnets/snet-xxx-xxx"
+    }
+  }
+}
