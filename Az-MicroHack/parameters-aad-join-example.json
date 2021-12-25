@@ -9,7 +9,7 @@
         "mission": "administrative",
         "po-number": "zzz",
         "protection-level": "p1",
-        "source": "Wonderworld",
+        "source": "pauldotyu/azure-virtual-desktop-bicep",
         "join-type": "AAD"
       }
     },
