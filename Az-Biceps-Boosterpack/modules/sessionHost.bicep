@@ -14,13 +14,6 @@ param vmSize string
   'Windows_Server'
 ])
 param licenseType string = 'Windows_Client'
-//param domainToJoin string
-//param domainUserName string
-//@secure()
-//param domainPassword string
-//@description('Set of bit flags that define the join options. Default value of 3 is a combination of NETSETUP_JOIN_DOMAIN (0x00000001) & NETSETUP_ACCT_CREATE (0x00000002) i.e. will join the domain and create the account on the domain. For more information see https://msdn.microsoft.com/en-us/library/aa392154(v=vs.85).aspx')
-//param domainJoinOptions int = 3
-//param ouPath string
 param installNVidiaGPUDriver bool = false
 param utcValue string = utcNow('MMdd')
 
@@ -50,8 +43,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2019-07-01' = [fo
 }]
 
 resource sessionHost 'Microsoft.Compute/virtualMachines@2019-07-01' = [for i in range(0, count): {
-  //name: 'vm${take(name, 10)}-${i + 1}'
-  name: 'vm${name}-${utcValue}-${i + 1}'
+  name: '${name}-${utcValue}-${i + 1}'
   location: location
   tags: tags
   identity: {
@@ -59,8 +51,7 @@ resource sessionHost 'Microsoft.Compute/virtualMachines@2019-07-01' = [for i in 
   }
   properties: {
     osProfile: {
-      //computerName: 'vm${take(name, 10)}-${i + 1}'
-      computerName: 'vm${name}-${utcValue}-${i + 1}'
+      computerName: '${name}-${utcValue}-${i + 1}'
       adminUsername: localAdminName
       adminPassword: localAdminPassword
     }
@@ -95,34 +86,7 @@ resource sessionHost 'Microsoft.Compute/virtualMachines@2019-07-01' = [for i in 
     networkInterface[i]
   ]
 }]
-/*
-// Run this if we are not Azure AD joining the session hosts
-resource sessionHostDomainJoin 'Microsoft.Compute/virtualMachines/extensions@2020-06-01' = [for i in range(0, count): if (!aadJoin) {
-  name: '${sessionHost[i].name}/JoinDomain'
-  location: location
-  tags: tags
-  properties: {
-    publisher: 'Microsoft.Compute'
-    type: 'JsonADDomainExtension'
-    typeHandlerVersion: '1.3'
-    autoUpgradeMinorVersion: true
-    settings: {
-      name: domainToJoin
-      ouPath: ouPath
-      user: domainUserName
-      restart: true
-      options: domainJoinOptions
-    }
-    protectedSettings: {
-      password: domainPassword
-    }
-  }
 
-  dependsOn: [
-    sessionHost[i]
-  ]
-}]
-*/
 // Run this if we are Azure AD joining the session hosts - no intune support
 resource sessionHostAADLogin 'Microsoft.Compute/virtualMachines/extensions@2020-06-01' = [for i in range(0, count): if (aadJoin) {
   name: '${sessionHost[i].name}/AADLoginForWindows'

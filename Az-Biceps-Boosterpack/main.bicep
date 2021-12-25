@@ -14,11 +14,6 @@ param vmSize string
 param vmCount int = 1
 param vmLicenseType string
 param dnsServer string = ''
-//param domainToJoin string = ''
-//param domainUserName string = ''
-//@secure()
-//param domainPassword string = ''
-//param ouPath string = ''
 
 resource resourceGroup 'Microsoft.Resources/resourceGroups@2020-01-01' = {
   name: 'rg-${name}'
@@ -101,10 +96,6 @@ module sessionHost 'modules/sessionHost.bicep' = {
     count: vmCount
     licenseType: vmLicenseType
     aadJoin: aadJoin
-    //domainToJoin: domainToJoin
-    //domainPassword: domainPassword
-    //domainUserName: domainUserName
-    //ouPath: ouPath
     vnetId: virtualNetwork.outputs.id
   }
 
