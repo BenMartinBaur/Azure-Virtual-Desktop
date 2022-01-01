@@ -34,7 +34,7 @@ Steps:
 
   `az upgrade --yes`
 
-  `az biceps upgrade `
+  `az biceps upgrade ` or `az biceps install` (to install it)
   
 - If necessary select your target subscription:
   
