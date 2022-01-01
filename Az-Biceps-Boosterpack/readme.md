@@ -9,7 +9,7 @@ All traditional infrastructure services such as brokering, web access, load bala
 
 ## Objectives
 
-1. Deploy Azure Virtual Desktop in an existing virtual network
+1. Deploy Azure Virtual Desktop Sessionhosts in a new virtual network
 2. All session hosts are AAD joined only
 3. Use the parameter-aad-join-example.json to provide additional variables.
 4. (Coming soon) configure role assignments and FSLogix. 
@@ -33,16 +33,12 @@ Steps:
 - Ensure Azure CLI and extensions are up to date:
 
   `az upgrade --yes`
-  
+
   `az biceps upgrade `
   
 - If necessary select your target subscription:
   
   `az account set --subscription <Name or ID of subscription>`
-
-- Since the network infrastructure is already deployed, get the network ID with 
-
-`az network vnet subnet list --resource-group rg-bebaur-vnet --vnet-name test --query "[?name=='YourSubnet'].id"`
 
 - Update and set the `parameters-aad-join-example.json`
 - Update and set the `main.bicep` parameters.

@@ -4,12 +4,12 @@
   "parameters": {
     "tags": {
       "value": {
-        "availability-level": "a1",
-        "environment": "prod",
-        "mission": "administrative",
-        "po-number": "zzz",
-        "protection-level": "p1",
-        "source": "Wonderworld",
+        "availability-level": "",
+        "environment": "",
+        "mission": "",
+        "po-number": "",
+        "protection-level": "",
+        "source": "",
         "join-type": "AAD"
       }
     },
