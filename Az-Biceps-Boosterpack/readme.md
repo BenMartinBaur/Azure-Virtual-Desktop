@@ -1,31 +1,58 @@
-1. Deployment into a existing network
-2. AAD only 
-3. Parameter file for Cx environment data
+# Azure Virtual Desktop - Boosterpack
 
-Prerequisits
-1. az bicep install
-or update  az bicep upgrade
+## Introduction
 
-2. Login into Azure 
-az login
+This code is designed to help you spin up an Azure Virtual Desktop Demo environement.
 
-3. If working with multiple subscriptions set your subscription
-az account set --subscription 'Your subscription'
+AVD – is a born-in-the-cloud desktop-as-a-service platform service offered entirely on our Microsoft Intelligent Cloud. 
+All traditional infrastructure services such as brokering, web access, load balancer, management and monitoring are part of the AVD control plane and can be configured from the Azure portal or via the Azure Resource Manager (ARM).
 
-4. Since the network infrastructure is already deployed, get the network ID with 
-az network vnet subnet list --resource-group rg-bebaur-vnet --vnet-name test --query "[?name=='YourSubnet'].id"
+## Objectives
 
-Ready to run? 
+1. Deploy Azure Virtual Desktop in an existing virtual network
+2. All session hosts are AAD joined only
+3. Use the parameter-aad-join-example.json to provide additional variables.
+4. (Coming soon) configure role assignments and FSLogix. 
 
-5. Update and set the parameters-aad-join-example.json
-6. Update and set the main.bicep parameters.
-7. Run
+In this hack you will learn how to set up a Azure Virtual Desktop in a typical scenario and build it out in your own environment. Once your AVD environment is built you will learn how to scale. monitor and manage the environment with other Azure resources. 
 
-$location = "WestEurope"
-$name="gbb"
-$localAdminName=""
-$localAdminPassword=""
+## Prerequisites
 
-az deployment sub create --location $location -f ./main.bicep --parameters name=$name localAdminName=$localAdminName localAdminPassword=$localAdminPassword --parameters @parameters-aad-join-example.json -c
+- Azure Subscription
+- Visual Studio Code (https://code.visualstudio.com/)
+- Visual Studio Biceps Extension installed
+- Azure CLI 
+- [M365 License](https://docs.microsoft.com/en-us/azure/virtual-desktop/overview#requirements)
 
-Updated version from pauldotyu :)
+## Task 1: Deploy
+Steps:
+- Log in to Azure Cloud Shell at https://shell.azure.com/ and select Bash
+
+  `az login`
+
+- Ensure Azure CLI and extensions are up to date:
+
+  `az upgrade --yes`
+  `az biceps upgrade `
+  
+- If necessary select your target subscription:
+  
+  `az account set --subscription <Name or ID of subscription>`
+
+- Since the network infrastructure is already deployed, get the network ID with 
+
+`az network vnet subnet list --resource-group rg-bebaur-vnet --vnet-name test --query "[?name=='YourSubnet'].id"`
+
+- Update and set the `parameters-aad-join-example.json`
+- Update and set the `main.bicep` parameters.
+
+- Run the deployment with e.g. 
+
+`$location = "WestEurope"`
+`$name="<your name>"`
+`$localAdminName="<your local admin>"`
+`$localAdminPassword="<your local admin password>"`
+
+`az deployment sub create --location $location -f ./main.bicep --parameters name=$name localAdminName=$localAdminName localAdminPassword=$localAdminPassword --parameters @parameters-aad-join-example.json -c`
+
+:exclamation: Updated version from pauldotyu :)!
