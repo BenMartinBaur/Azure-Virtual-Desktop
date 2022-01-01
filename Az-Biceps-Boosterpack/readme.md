@@ -33,6 +33,7 @@ Steps:
 - Ensure Azure CLI and extensions are up to date:
 
   `az upgrade --yes`
+  
   `az biceps upgrade `
   
 - If necessary select your target subscription:
@@ -49,10 +50,13 @@ Steps:
 - Run the deployment with e.g. 
 
 `$location = "WestEurope"`
+
 `$name="<your name>"`
+
 `$localAdminName="<your local admin>"`
+
 `$localAdminPassword="<your local admin password>"`
 
 `az deployment sub create --location $location -f ./main.bicep --parameters name=$name localAdminName=$localAdminName localAdminPassword=$localAdminPassword --parameters @parameters-aad-join-example.json -c`
 
-:exclamation: Updated version from pauldotyu :)!
+:exclamation: Updated version from pauldotyu :)
