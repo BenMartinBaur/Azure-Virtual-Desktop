@@ -1,6 +1,6 @@
 # Getting started
 
-**[Home](../readme.md)** - [Challenge One](./01-Plan-AVD-Architecture.md)
+**[Home](../readme.md)** - [Challenge One](./01-Personal-Hostpools.md)
 
 ## Introduction
 

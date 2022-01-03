@@ -1,6 +1,6 @@
 # RDP Personal Hostpools
 
-[Previous Challenge](./00-Pre-Reqs.md) - **[Home](../README.md)** - [Next Challenge](./xxx.md)
+[Previous Challenge](./00-Pre-Reqs.md) - **[Home](../readme.md)** - [Next Challenge](./xxx.md)
 
 ## Introduction
 ...
