@@ -1,10 +1,23 @@
 # Challenge 0: Getting started
 
-**[Home](../README.md)** - [Next Challenge>](./01-Plan-AVD-Architecture.md)
+**[Home](../README.md)** - [Challenge One](./01-Plan-AVD-Architecture.md)
 
 ## Introduction
 
-This challenge is to ensure that all the pre-requisites and/or concepts to start the planning and deployment for Azure Virtual Desktop (AVD) are in place.
+Azure Virtual Desktop is a service that gives users easy and secure access to their virtualized desktops and RemoteApps. This topic will tell you a bit more about the general structure of the Azure Virtual Desktop environment.
+
+This introduction is to ensure that all the pre-requisites and/or concepts to start the planning and deployment for Azure Virtual Desktop (AVD) are in place.
+
+## Architecture
+The following image shows the overall conceptual reference architecture that demonstrates design areas and best practices. 
+
+![AVD Architecture](../Images/00-azure-virtual-desktop-architecture.png)
+
+For this MiniHack we simplify the deployment down to Azure AD joined sessionhosts only so there are no dependencies on Domain Controllers.  
+
+The architecture will be like 
+
+"ADD NEW PICTURE HERE"
 
 ## Components
 Azure Virtual Desktop service architecture is similar to Windows Server Remote Desktop Services. Microsoft manages the infrastructure and brokering components, while enterprise customers manage their own desktop host virtual machines (VMs), data, and clients.
@@ -63,6 +76,7 @@ The relationships between host pools, workspaces and other key logical component
 ### Relationships between key logical components
 
 ![AVD Relationships](../Images/00-azure-virtual-desktop-component-relationships.png)
+
 The bracketed numbers relate to the diagram above.
 
 1. An application group that contains a published desktop cannot contain any other published resources and is called a desktop application group.
@@ -72,5 +86,10 @@ The bracketed numbers relate to the diagram above.
 5. It's possible to have an empty host pool but it cannot service users.
 6. It's possible for a host pool not to have any application groups assigned to it but it cannot service users.
 7. Azure AD is required for AVD. This is because Azure AD user accounts and groups must always be used to assign users to AVD application groups. Azure AD is also used to authenticate users into the AVD service. AVD session hosts can also be members of an Azure AD domain and in this situation the AVD published applications and desktop sessions will also be launched and run (not just assigned) using Azure AD accounts.
-7. Alternatively AVD session hosts can be members of an AD DS (Active Directory Domain Services) domain and in this situation the AVD published applications and desktop sessions will be launched and run (but not assigned) using AD DS accounts. To reduce user and administrative overhead AD DS can be synchronized with Azure AD using Azure AD Connect.
-7. Finally AVD session hosts can, instead, be members of an Azure AD DS (Azure Active Directory Domain Services) domain and in this situation the AVD published applications and desktop sessions will be launched and run (but not assigned) using Azure AD DS accounts. Azure AD is automatically synchronized with Azure AD DS, one way from Azure AD to Azure AD DS only.
+- 7. Alternatively AVD session hosts can be members of an AD DS (Active Directory Domain Services) domain and in this situation the AVD published applications and desktop sessions will be launched and run (but not assigned) using AD DS accounts. To reduce user and administrative overhead AD DS can be synchronized with Azure AD using Azure AD Connect.
+- 7. Finally AVD session hosts can, instead, be members of an Azure AD DS (Azure Active Directory Domain Services) domain and in this situation the AVD published applications and desktop sessions will be launched and run (but not assigned) using Azure AD DS accounts. Azure AD is automatically synchronized with Azure AD DS, one way from Azure AD to Azure AD DS only.
+
+## Learning resources
+- The Azure Virtual Desktop construction set from the [Cloud Adoption Framework](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/wvd/enterprise-scale-landing-zone)
+- Azure Virtual Desktop for the enterprise - [Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop)
+- Azure Virtual Desktop Documentation - [Doc](https://docs.microsoft.com/en-us/azure/virtual-desktop/)

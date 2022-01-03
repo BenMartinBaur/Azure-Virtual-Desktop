@@ -22,7 +22,15 @@ In this hack you will learn how to set up a Azure Virtual Desktop in a typical s
 ## Challenges
 
 - Challenge 0: **[Getting started](Challenges/00-Pre-Reqs.md)**
-- Challenge 1: **[Design the AVD Architecture](Challenges/01-Plan-AVD-Architecture.md)**
+- Challenge 1: **[Deploy a personal session host](Challenges/01-Plan-AVD-Architecture.md)**
+- Challenge 2: jumpbox - remote apps (multi-session RDP verbinden, Notepad deployen, Image erstellen, in image gallery laden und 2 Session hosts mit dem image deployen)
+- Challenge 3: FSLogix (Azure Files joined in AAD provided to attendees) 
+- Challenge 4: Implement „start VM on connect“ (single-session) 
+- Challenge 5: Setup scaling-plan (multi-session)
+- Challenge 6: in RDP properties in single session restriktive Einstellung bzgl copy paste, USB redirection und in multi-session bzgl copy paste
+- Challenge 7 (optional): Monitoring (Log Analytics workspace required)
+- Challenge 8 (optional): disaster recovery & backup for AVD (failover / replicate in other region) 
+- Challenge 9 (optional): conditional access (MFA required)
 
 
 ## Prerequisites
@@ -34,3 +42,8 @@ In this hack you will learn how to set up a Azure Virtual Desktop in a typical s
 - [M365 License](https://docs.microsoft.com/en-us/azure/virtual-desktop/overview#requirements)
 
 ## Repository Contents
+
+## Contributor
+- Ben Martin Baur
+- Angelika Gerl
+- Leonie Mueller
