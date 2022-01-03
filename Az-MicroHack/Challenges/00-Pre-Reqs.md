@@ -1,6 +1,6 @@
 # Getting started
 
-**[Home](../README.md)** - [Challenge One](./01-Plan-AVD-Architecture.md)
+**[Home](../readme.md)** - [Challenge One](./01-Plan-AVD-Architecture.md)
 
 ## Introduction
 

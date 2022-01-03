@@ -1,6 +1,6 @@
 # RDP Properties
 
-[Previous Challenge](./00-Pre-Reqs.md) - **[Home](../README.md)** - [Next Challenge](./xxx.md)
+[Previous Challenge](./00-Pre-Reqs.md) - **[Home](../readne.md)** - [Next Challenge](./xxx.md)
 
 ## Introduction
 Azure Virtual Desktop enables you to configure and customize Remote Desktop Protocol (RDP) properties for a host pool. This 

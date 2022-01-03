@@ -11,10 +11,6 @@ AVD has quickly gained adoption across the globe with companies moving to remote
 
 This hack covers all essential artifacts of AVD and starts off by covering the basics and then digs deep into the different componets. You will encounter different types of solutions that is or could be needed in a AVD environment. 
 
-AGENDA: 
-
-Challenges 0-7 should be done in order, 8-11 can be done randomly once 0-7 are completed. 
-
 ## Learning Objectives
 
 In this hack you will learn how to set up a Azure Virtual Desktop in a typical scenario and build it out in your own environment. Once your AVD environment is built you will learn how to scale. monitor and manage the environment with other Azure resources. 
@@ -27,7 +23,7 @@ In this hack you will learn how to set up a Azure Virtual Desktop in a typical s
 - Challenge 3: FSLogix (Azure Files joined in AAD provided to attendees) 
 - Challenge 4: Implement „start VM on connect“ (single-session) 
 - Challenge 5: Setup scaling-plan (multi-session)
-- Challenge 6:  **[Configure RDP Properties](Challenges/06-RDP-properties.md)**in RDP properties in single session restriktive Einstellung bzgl copy paste, USB redirection und in multi-session bzgl copy paste
+- Challenge 6: **[Configure RDP Properties](Challenges/06-RDP-properties.md)**
 - Challenge 7 (optional): Monitoring (Log Analytics workspace required)
 - Challenge 8 (optional): disaster recovery & backup for AVD (failover / replicate in other region) 
 - Challenge 9 (optional): conditional access (MFA required)
