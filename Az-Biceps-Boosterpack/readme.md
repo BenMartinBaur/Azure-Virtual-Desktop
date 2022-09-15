@@ -54,5 +54,3 @@ Steps:
 `$localAdminPassword="<your local admin password>"`
 
 `az deployment sub create --location $location -f ./main.bicep --parameters name=$name localAdminName=$localAdminName localAdminPassword=$localAdminPassword --parameters @parameters-aad-join-example.json -c`
-
-:exclamation: Updated version from pauldotyu :)
