@@ -1,0 +1,7 @@
+https://docs.microsoft.com/en-us/azure/batch/tutorial-parallel-dotnet
+https://docs.microsoft.com/en-us/azure/batch/quick-create-bicep?tabs=CLI
+
+https://github.com/mocelj/AzureBatch-Secured
+
+https://docs.microsoft.com/en-us/azure/templates/microsoft.batch/batchaccounts?msclkid=afc5ae2ed03111eca91f4825721681e4&tabs=bicep
+https://docs.microsoft.com/en-us/azure/batch/quick-create-bicep?tabs=CLI
